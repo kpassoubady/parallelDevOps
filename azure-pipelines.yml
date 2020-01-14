@@ -14,14 +14,19 @@ resources:
 trigger:
 - master
 
+
+stages:
+
+
+
+#First Stage on Ubuntu
+- stage: UbuntuQAEnvCheck
+
 extends:
     template: templates/ready-to-proceed.yml
     parameters:
         readyToProceed: false
-
-stages:
-#First Stage on Ubuntu
-- stage: UbuntuQAEnvCheck
+        
   jobs:
   - job: UbuntuQaInlineScripts
     
